@@ -1,3 +1,9 @@
+<?php
+require_once __DIR__.'/../services/userservice.php';
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,13 +36,45 @@
                 <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
                 </svg>
                 </a>
-                <a id="loginbutton" class="nav-link" href="login">Login</a>
+                <?php
+                if(isset($_SESSION['authenticatedUser'])) {
+                    $authenticatedUser = $_SESSION['authenticatedUser'];
+                    echo '<a id="loginbutton" class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">' . $authenticatedUser->getName() . '</a>';
+                }
+                else
+                    echo '<a id="loginbutton" "class="nav-link" href="login">Login</a>';
+                ?>
             </div>
         </div>
     </div>
 </nav>
 
+<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="logoutModalLabel">Logout Confirmation</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to logout, <?= $authenticatedUser->getName(); ?>?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <a href="/" class="btn btn-primary">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<script>
+    function logout() {
+        // Display the logout confirmation modal
+        $('#logoutModal').modal('show');
+    }
+</script>
 
 </body>
 </html>

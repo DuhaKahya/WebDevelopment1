@@ -6,7 +6,7 @@ class ArticleController {
 
     private $articleService;
 
-    public function __construct() {
+    public function __construct() { 
         $this->articleService = new ArticleService();
     }
 

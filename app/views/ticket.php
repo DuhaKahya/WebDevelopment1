@@ -1,3 +1,5 @@
+<?php include 'header.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +9,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-
-<?php include 'header.php'; ?>
 
 <div class="container">
 <?php
@@ -71,8 +71,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <p class="text-muted">Availability: <?= $article->getStock(); ?></p>
                             </div>
                             <div class="col-md-3">
+                            <?php 
+                            if (isset($_SESSION['authenticatedUser'])) {
+                                $userid = $_SESSION['authenticatedUser']->getId();
+                            } else {
+                                $userid = 0;
+                            } 
+                            ?>
                                 <form method="POST" action="">
-                                    <input type="hidden" id="userid" name="userid" value="1"> 
+                                    <input type="hidden" id="userid" name="userid" value="<?= $userid; ?>"> 
                                     <input type="hidden" id="articleid" name="articleid" value="<?= $article->getId(); ?>">
                                     <input type="hidden" id="price" name="price" value="<?= $article->getPrice(); ?>">
                                     <div class="input-group">

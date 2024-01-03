@@ -1,7 +1,4 @@
-<?php
-session_start();
-?>
-
+<?php include 'header.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,8 +11,6 @@ session_start();
     <link rel="icon" type="image/jpg" href="images/favicon.jpg">
 </head>
 <body>
-
-<?php include 'header.php'; ?>
 
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">

@@ -1,3 +1,5 @@
+<?php include 'header.php'; ?>
+
 <?php
 require_once __DIR__.'/../services/userservice.php';
 
@@ -51,8 +53,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 
-<?php include 'header.php'; ?>
-
 <div class="container registercontainer">
     <h2>Register</h2>
     <div class="card">
@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="address">Address</label>
                     <input type="text" class="form-control" id="address" name="address" required>
                 </div>
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <label for="phonenumber">Phone Number</label>
                     <input type="tel" class="form-control" id="phonenumber" name="phonenumber" required>
                 </div>
@@ -89,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
     <?php
-    if ($errorMsg) {
+    if (isset($errorMsg)) {
         ?> <div class="alert alert-danger mt-3" role="alert">Username already exists!</div><?php
     }
     ?>        

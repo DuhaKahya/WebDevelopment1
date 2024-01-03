@@ -1,3 +1,5 @@
+<?php include 'header.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,9 +10,8 @@
 </head>
 <body>
 
-<?php include 'header.php'; ?>
-
 <div class="container">
+
     <h1>Contactpage</h1>
 
     <?php
