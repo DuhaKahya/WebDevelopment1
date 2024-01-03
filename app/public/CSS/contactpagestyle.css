@@ -1,0 +1,50 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.container {
+    max-width: 400px; /* Aanpassen aan je behoeften */
+    margin-top: 20px; /* Afstand van bovenkant van de pagina */
+}
+
+h1 {
+    color: blue;
+}
+
+#guestbook-form {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 10px; /* Meer ruimte tussen labels */
+}
+
+#name, #email, #subject, #message {
+    width: 100%;
+    padding: 12px; /* Maak de textvelden wat groter */
+    margin-bottom: 15px; /* Meer ruimte tussen textvelden */
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}

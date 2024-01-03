@@ -1,0 +1,14 @@
+body {
+    height: 100vh;
+    display: flex;
+    align-items: flex-start; /* Align at the top */
+    justify-content: center;
+    margin: 0;
+}
+
+.logincontainer {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    margin-top: 30px; /* Adjust the top margin as needed */
+}

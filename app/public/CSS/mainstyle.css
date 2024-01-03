@@ -1,0 +1,70 @@
+* {
+    font-family: Verdana, sans-serif;  
+}
+
+body{
+    height: 500vh;
+    padding-top: 150px;
+}
+/* Header */
+#navigation {
+    margin: 0;
+    padding: 0;
+}
+
+#navigation div{
+    background-color: #b30000;
+    align-items: center;
+}
+
+.logo {
+    width: 75px;
+    height: 100px;
+    margin: 10px;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.navbar-nav a {
+    color: white;
+    margin: 0 5px;
+    text-decoration: none;
+}
+.navbar-nav a:hover {
+    color: #0084ff;
+}
+
+#shoppingcart {
+    fill: white;
+    width: 35px;
+    height: 55px;
+    margin-right: 20px;
+}
+#title{
+    color: white;
+    font-size: 30px;
+    margin-left: 15px;
+    font-weight: bold;
+}
+#title:hover{
+    color: #0084ff;
+}
+#shoppingcart:hover {
+    fill: #0084ff;
+}
+
+#loginbutton {
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 5px;
+}
+#loginbutton:hover {
+    background-color: #0084ff;
+}
