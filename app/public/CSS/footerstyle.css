@@ -1,0 +1,33 @@
+#footer div{
+    background-color: #b30000;
+    color: white;
+    padding: 20px;
+}
+
+#footer h3 {
+    color: #ffffff;
+}
+
+#footer p {
+    color: #ffffff;
+}
+
+#footer .social-link {
+    display: block;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+#footer .social-link svg{
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+}
+
+#footer .social-link:hover {
+    color: #0084ff;
+}
+
+#footer hr {
+    border-color: #ffffff;
+}

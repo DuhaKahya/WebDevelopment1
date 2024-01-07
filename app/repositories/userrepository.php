@@ -40,6 +40,21 @@ class UserRepository{
         $statement->setFetchMode(PDO::FETCH_CLASS, "User");
         return $statement->fetch();
     }
+
+    public function insert($user) {
+        
+        $statement = $this->connection->prepare("INSERT INTO users (username, password, email, name, adres, phonenumber, registrationdate) 
+        VALUES (:username, :password, :email, :name, :adres, :phonenumber, CURRENT_TIMESTAMP)");
+
+        $statement->bindParam(":username", $user->username);
+        $statement->bindParam(":password", $user->password);
+        $statement->bindParam(":email", $user->email);
+        $statement->bindParam(":name", $user->name);
+        $statement->bindParam(":adres", $user->adres);
+        $statement->bindParam(":phonenumber", $user->phonenumber);
+        
+        $statement->execute();
+    }
     
     
 }

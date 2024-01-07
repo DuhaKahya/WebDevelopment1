@@ -12,6 +12,8 @@
 </head>
 <body>
 
+
+
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -284,7 +286,7 @@ Thanks for being part of our online home. Together, let's continue writing the r
     </tr>
 </table>
 
-<ul class="legen">
+<ul class="legend">
         <li><span class="legend-text" style="color: #036ffc;">Champions League</span></li>
         <li><span class="legend-text" style="color: #fca503;">Europa League</span></li>
         <li><span class="legend-text" style="color: #77ff21;">Conference League</span></li>
@@ -295,7 +297,7 @@ Thanks for being part of our online home. Together, let's continue writing the r
 
 
 
-
+<?php include 'footer.php'; ?>
 
 </body>
 </html>

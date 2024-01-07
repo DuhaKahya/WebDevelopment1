@@ -3,10 +3,10 @@
 }
 
 body{
-    height: 500vh;
     padding-top: 150px;
 }
-/* Header */
+
+
 #navigation {
     margin: 0;
     padding: 0;
@@ -68,3 +68,4 @@ body{
 #loginbutton:hover {
     background-color: #0084ff;
 }
+

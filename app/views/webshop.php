@@ -20,12 +20,17 @@
 
         // Check if the form has been submitted
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            // Call the method to handle form submission
-            $shoppingCartController->insert();
-            
-            ?><div class="alert alert-success" role="alert">
-            <p>Item added to the shoppingcart!</p>
-        </div><?php
+            // Check if the user is logged in
+            if (isset($_SESSION['authenticatedUser'])) {
+                // Call the method to handle form submission
+                $shoppingCartController->insert();
+                ?><div id="succesalert" class="alert alert-success" role="alert">
+                <p>Item added to the shopping cart!</p>
+            </div><?php
+            } else {
+                // Redirect to the login page
+                exit('<script>location.replace("login");</script>');
+            }
         }
     ?>
 
@@ -33,8 +38,6 @@
         <?php
         if (isset($_SESSION['authenticatedUser'])) {
             $userid = $_SESSION['authenticatedUser']->getId();
-        } else {
-            $userid = 0;
         }
         $imageCount = 1;
         foreach ($articles as $article):
