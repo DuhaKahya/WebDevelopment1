@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="CSS/homestyle.css">
     <link href=https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Galatasaray</title>
-    <link rel="icon" type="image/jpg" href="images/favicon.jpg">
+    <link rel="icon" type="image/jpg" href="images/favicon1.jpg">
 </head>
 <body>
 
+<h1 class="text-center fw-bold"> Galatasaray </h1>
 
-
+<div class="container">
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -62,242 +63,273 @@ This platform is a digital hub for all Galatasaray enthusiasts. Whether you're a
 Thanks for being part of our online home. Together, let's continue writing the remarkable story of Galatasaray Football Club!
 </p>
 
-<div class="card">
-  <img src="images/awaykit.jpg" class="card-img">
-  <div class="card-img-overlay">
-    <h5 class="card-title">Galatasaray Away Kit 2023/2024</h5>
-    <p class="card-text">Get your Galatasaray Away Kit now!</p>
-    <a href="webshop" id="shopnowbutton" class="btn btn-primary">Shop now</a>
-  </div>
-</div>
-
-<div class="ptable">
-  <h1 class="headin">Standings</h1>
-                                                                               <table>
-    <tr class="col">
-        <th>#</th>
-        <th>Team</th>
-        <th>GP</th>
-        <th>W</th>
-        <th>D</th>
-        <th>L</th>
-        <th>GD</th>
-        <th>PTS</th>
-    </tr>
-    <tr class="cl">
-        <td>1</td>
-        <td>Fenerbahce FC</td>
-        <td>17</td>
-        <td>14</td>
-        <td>2</td>
-        <td>1</td>
-        <td>30</td>
-        <td>44</td>
-    </tr>
-    <tr class="cl">
-        <td>2</td>
-        <td>Galatasaray</td>
-        <td>17</td>
-        <td>14</td>
-        <td>2</td>
-        <td>1</td>
-        <td>23</td>
-        <td>44</td>
-    </tr>
-    <tr class="el">
-        <td>3</td>
-        <td>Trabzonspor</td>
-        <td>17</td>
-        <td>9</td>
-        <td>3</td>
-        <td>5</td>
-        <td>11</td>
-        <td>30</td>
-    </tr>
-    <tr class="confl">
-        <td>4</td>
-        <td>Kayserispor</td>
-        <td>17</td>
-        <td>8</td>
-        <td>5</td>
-        <td>4</td>
-        <td>4</td>
-        <td>29</td>
-    </tr>
-    <tr class="pos">
-        <td>5</td>
-        <td>Besiktas</td>
-        <td>17</td>
-        <td>9</td>
-        <td>2</td>
-        <td>6</td>
-        <td>2</td>
-        <td>29</td>
-    </tr>
-    <tr class="pos">
-        <td>6</td>
-        <td>Adana Demirspor</td>
-        <td>17</td>
-        <td>7</td>
-        <td>6</td>
-        <td>4</td>
-        <td>9</td>
-        <td>27</td>
-    </tr>
-    <tr class="pos">
-        <td>7</td>
-        <td>Caykur Rizespor</td>
-        <td>17</td>
-        <td>7</td>
-        <td>5</td>
-        <td>5</td>
-        <td>-1</td>
-        <td>26</td>
-    </tr>
-    <tr class="pos">
-        <td>8</td>
-        <td>Antalyaspor</td>
-        <td>17</td>
-        <td>6</td>
-        <td>6</td>
-        <td>5</td>
-        <td>4</td>
-        <td>24</td>
-    </tr>
-    <tr class="pos">
-        <td>9</td>
-        <td>Kasimpasa</td>
-        <td>17</td>
-        <td>6</td>
-        <td>5</td>
-        <td>6</td>
-        <td>-4</td>
-        <td>23</td>
-    </tr>
-    <tr class="pos">
-        <td>10</td>
-        <td>Sivasspor</td>
-        <td>17</td>
-        <td>5</td>
-        <td>6</td>
-        <td>6</td>
-        <td>-7</td>
-        <td>21</td>
-    </tr>
-    <tr class="pos">
-        <td>11</td>
-        <td>MKE Ankaragücü</td>
-        <td>17</td>
-        <td>4</td>
-        <td>8</td>
-        <td>5</td>
-        <td>0</td>
-        <td>20</td>
-    </tr>
-    <tr class="pos">
-        <td>12</td>
-        <td>Alanyaspor</td>
-        <td>17</td>
-        <td>5</td>
-        <td>5</td>
-        <td>7</td>
-        <td>-7</td>
-        <td>20</td>
-    </tr>
-    <tr class="pos">
-        <td>13</td>
-        <td>Basaksehir FK</td>
-        <td>17</td>
-        <td>5</td>
-        <td>4</td>
-        <td>8</td>
-        <td>-3</td>
-        <td>19</td>
-    </tr>
-    <tr class="pos">
-        <td>14</td>
-        <td>Hatayspor</td>
-        <td>17</td>
-        <td>4</td>
-        <td>7</td>
-        <td>6</td>
-        <td>1</td>
-        <td>19</td>
-    </tr>
-    <tr class="pos">
-        <td>15</td>
-        <td>Gaziantep FK</td>
-        <td>17</td>
-        <td>6</td>
-        <td>1</td>
-        <td>10</td>
-        <td>-7</td>
-        <td>19</td>
-    </tr>
-    <tr class="pos">
-        <td>16</td>
-        <td>Konyaspor</td>
-        <td>17</td>
-        <td>4</td>
-        <td>6</td>
-        <td>7</td>
-        <td>-4</td>
-        <td>18</td>
-    </tr>
-    <tr class="deg">
-        <td>17</td>
-        <td>Fatih Karagümrük</td>
-        <td>17</td>
-        <td>4</td>
-        <td>5</td>
-        <td>8</td>
-        <td>0</td>
-        <td>17</td>
-    </tr>
-    <tr class="deg">
-        <td>18</td>
-        <td>Samsunspor</td>
-        <td>17</td>
-        <td>4</td>
-        <td>3</td>
-        <td>10</td>
-        <td>-10</td>
-        <td>15</td>
-    </tr>
-    <tr class="deg">
-        <td>19</td>
-        <td>Pendikspor</td>
-        <td>17</td>
-        <td>3</td>
-        <td>5</td>
-        <td>9</td>
-        <td>-21</td>
-        <td>14</td>
-    </tr>
-    <tr class="deg">
-        <td>20</td>
-        <td>Istanbulspor</td>
-        <td>17</td>
-        <td>2</td>
-        <td>2</td>
-        <td>13</td>
-        <td>-20</td>
-        <td>5</td>
-    </tr>
-</table>
-
-<ul class="legend">
-        <li><span class="legend-text" style="color: #036ffc;">Champions League</span></li>
-        <li><span class="legend-text" style="color: #fca503;">Europa League</span></li>
-        <li><span class="legend-text" style="color: #77ff21;">Conference League</span></li>
-        <li><span class="legend-text" style="color: #ff7b21;">Relegation</span></li>
-</ul>
-
 </div>
 
 
+<div class="container-flex">
+    <div class="row">
+        <div class="col-xxl-6">
+            <div class="standings-container">
+                <div class="ptable">
+                    <h1 class="heading">Standings</h1>                                                                     <table>
+                        <tr class="col">
+                            <th>#</th>
+                            <th>Team</th>
+                            <th>GP</th>
+                            <th>W</th>
+                            <th>D</th>
+                            <th>L</th>
+                            <th>GD</th>
+                            <th>PTS</th>
+                        </tr>
+                        <tr class="cl">
+                            <td>1</td>
+                            <td>Fenerbahce FC</td>
+                            <td>17</td>
+                            <td>14</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>30</td>
+                            <td>44</td>
+                        </tr>
+                        <tr class="cl">
+                            <td>2</td>
+                            <td>Galatasaray</td>
+                            <td>17</td>
+                            <td>14</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>23</td>
+                            <td>44</td>
+                        </tr>
+                        <tr class="el">
+                            <td>3</td>
+                            <td>Trabzonspor</td>
+                            <td>17</td>
+                            <td>9</td>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>11</td>
+                            <td>30</td>
+                        </tr>
+                        <tr class="confl">
+                            <td>4</td>
+                            <td>Kayserispor</td>
+                            <td>17</td>
+                            <td>8</td>
+                            <td>5</td>
+                            <td>4</td>
+                            <td>4</td>
+                            <td>29</td>
+                        </tr>
+                        <tr class="pos">
+                            <td>5</td>
+                            <td>Besiktas</td>
+                            <td>17</td>
+                            <td>9</td>
+                            <td>2</td>
+                            <td>6</td>
+                            <td>2</td>
+                            <td>29</td>
+                        </tr>
+                        <tr class="pos">
+                            <td>6</td>
+                            <td>Adana Demirspor</td>
+                            <td>17</td>
+                            <td>7</td>
+                            <td>6</td>
+                            <td>4</td>
+                            <td>9</td>
+                            <td>27</td>
+                        </tr>
+                        <tr class="pos">
+                            <td>7</td>
+                            <td>Caykur Rizespor</td>
+                            <td>17</td>
+                            <td>7</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>-1</td>
+                            <td>26</td>
+                        </tr>
+                        <tr class="pos">
+                            <td>8</td>
+                            <td>Antalyaspor</td>
+                            <td>17</td>
+                            <td>6</td>
+                            <td>6</td>
+                            <td>5</td>
+                            <td>4</td>
+                            <td>24</td>
+                        </tr>
+                        <tr class="pos">
+                            <td>9</td>
+                            <td>Kasimpasa</td>
+                            <td>17</td>
+                            <td>6</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>-4</td>
+                            <td>23</td>
+                        </tr>
+                        <tr class="pos">
+                            <td>10</td>
+                            <td>Sivasspor</td>
+                            <td>17</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>6</td>
+                            <td>-7</td>
+                            <td>21</td>
+                        </tr>
+                        <tr class="pos">
+                            <td>11</td>
+                            <td>MKE Ankaragücü</td>
+                            <td>17</td>
+                            <td>4</td>
+                            <td>8</td>
+                            <td>5</td>
+                            <td>0</td>
+                            <td>20</td>
+                        </tr>
+                        <tr class="pos">
+                            <td>12</td>
+                            <td>Alanyaspor</td>
+                            <td>17</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>7</td>
+                            <td>-7</td>
+                            <td>20</td>
+                        </tr>
+                        <tr class="pos">
+                            <td>13</td>
+                            <td>Basaksehir FK</td>
+                            <td>17</td>
+                            <td>5</td>
+                            <td>4</td>
+                            <td>8</td>
+                            <td>-3</td>
+                            <td>19</td>
+                        </tr>
+                        <tr class="pos">
+                            <td>14</td>
+                            <td>Hatayspor</td>
+                            <td>17</td>
+                            <td>4</td>
+                            <td>7</td>
+                            <td>6</td>
+                            <td>1</td>
+                            <td>19</td>
+                        </tr>
+                        <tr class="pos">
+                            <td>15</td>
+                            <td>Gaziantep FK</td>
+                            <td>17</td>
+                            <td>6</td>
+                            <td>1</td>
+                            <td>10</td>
+                            <td>-7</td>
+                            <td>19</td>
+                        </tr>
+                        <tr class="pos">
+                            <td>16</td>
+                            <td>Konyaspor</td>
+                            <td>17</td>
+                            <td>4</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>-4</td>
+                            <td>18</td>
+                        </tr>
+                        <tr class="deg">
+                            <td>17</td>
+                            <td>Fatih Karagümrük</td>
+                            <td>17</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>8</td>
+                            <td>0</td>
+                            <td>17</td>
+                        </tr>
+                        <tr class="deg">
+                            <td>18</td>
+                            <td>Samsunspor</td>
+                            <td>17</td>
+                            <td>4</td>
+                            <td>3</td>
+                            <td>10</td>
+                            <td>-10</td>
+                            <td>15</td>
+                        </tr>
+                        <tr class="deg">
+                            <td>19</td>
+                            <td>Pendikspor</td>
+                            <td>17</td>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>9</td>
+                            <td>-21</td>
+                            <td>14</td>
+                        </tr>
+                        <tr class="deg">
+                            <td>20</td>
+                            <td>Istanbulspor</td>
+                            <td>17</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>13</td>
+                            <td>-20</td>
+                            <td>5</td>
+                        </tr>
+                    </table>
+                        <ul class="legend">
+                            <li><span class="legend-text" style="color: #036ffc;">Champions League</span></li>
+                            <li><span class="legend-text" style="color: #fca503;">Europa League</span></li>
+                            <li><span class="legend-text" style="color: #77ff21;">Conference League</span></li>
+                            <li><span class="legend-text" style="color: #ff7b21;">Relegation</span></li>        
+                        </ul>    
+                </div>
+            </div>
+        </div>
 
-<?php include 'footer.php'; ?>
+        <div class="col-xxl-6">
+            <div class="cards-container">
+                <div class="card">
+                    <img src="images/awaykit.jpg" class="card-img">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Galatasaray Away Kit 2023/2024</h5>
+                        <p class="card-text">Get your Galatasaray Away Kit now!</p>
+                        <a href="webshop" id="shopnowbutton" class="btn btn-primary">Shop now</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/gs-fb.jpg" class="card-img">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title-white">Galatasaray vs Fenerbahce</h5>
+                        <p class="card-text-white">Buy your tickets now!</p>
+                        <a href="tickets" id="shopnowbutton" class="btn btn-primary">Shop now</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/aboutgs.jpg" class="card-img">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title-white">About Galatasaray</h5>
+                        <p class="card-text-white">Learn more about our beautiful club!</p>
+                        <a href="about" id="shopnowbutton" class="btn btn-primary">About us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+                 
+
+
+
 
 </body>
 </html>
+
+
+<?php include 'footer.php'; ?>

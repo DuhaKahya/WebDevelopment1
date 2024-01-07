@@ -4,6 +4,7 @@
 
 body{
     padding-top: 150px;
+    overflow-x: hidden; 
 }
 
 

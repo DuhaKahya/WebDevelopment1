@@ -5,12 +5,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/webshopstyle.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Galatasaray</title>
+    <link rel="icon" type="image/jpg" href="images/favicon6.jpg">
 </head>
 <body>
 
-<div class="container">
+<div class="container min-vh-100">
     
 <?php
 require_once __DIR__.'/../controllers/shoppingcartcontroller.php';
@@ -43,12 +44,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["clearCart"])) {
 
 <?php
 require_once __DIR__.'/../controllers/ordercontroller.php';
+require_once __DIR__.'/../controllers/articlecontroller.php';
 
 $orderController = new OrderController();
+$articleController = new ArticleController();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["confirmPayment"])) {
     $orderController->insert();
-    
+
     ?><div class="alert alert-success" role="alert">
         <p>Payment confirmed!</p>
     </div><?php
@@ -59,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["confirmPayment"])) {
 
 
 
-    <h2>Shopping Cart</h2>
+    <h1 class="text-center fw-bold">Shopping Cart</h1>
 
     <?php if (empty($shoppingCarts)): ?>
         <div class="alert alert-danger" role="alert">
@@ -138,11 +141,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["confirmPayment"])) {
     <?php endif; ?>
 </div>
 
-<script>
-    setTimeout(function(){
-        document.getElementById('succesalert').style.display = 'none';
-    }, 5000);
-</script>
+
+
 
 </body>
 </html>
+
+
+<?php include 'footer.php'; ?>

@@ -7,7 +7,7 @@ class ShoppingCartController {
     private $shoppingCartService;
 
     public function __construct() {
-        $this->shoppingCartService = new ShoppingCartService();
+        $this->shoppingCartService = new ShoppingCartService();   
     }
 
     public function index() {

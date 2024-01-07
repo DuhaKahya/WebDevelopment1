@@ -6,10 +6,12 @@ class OrderController{
 
     private $orderService;
     private $shoppingCartService;
+    private $articleService;
 
     public function __construct() {
         $this->orderService = new OrderService();
         $this->shoppingCartService = new ShoppingCartService();
+        $this->articleService = new ArticleService();
     }
 
     public function index() {
@@ -17,23 +19,20 @@ class OrderController{
         require_once __DIR__.'/../views/order.php';
     }
 
-   
     public function insert() {
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["confirmPayment"])) {
-        
-        $shoppingCartId = $_POST["shoppingcartid"];
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["confirmPayment"])) {
+            $shoppingCartId = $_POST["shoppingcartid"];
+                
+            $orders = new Orders();
+
+            $orders->setShoppingcartid($shoppingCartId);
+            // Insert into the database
+            $this->orderService->insert($orders);
             
-        $orders = new Orders();
-
-        $orders->setShoppingcartid($shoppingCartId);
-
-        // Insert into the database
-        $this->orderService->insert($orders);
-        $this->shoppingCartService->clearCart();
+            $this->shoppingCartService->clearCart();
+        }
     }
-}
-
 
     
-    
+
 }

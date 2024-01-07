@@ -35,6 +35,5 @@ class ShoppingCartService {
     public function getShoppingCartById($id) {
         return $this->shoppingCartRepository->getShoppingCartById($id);
     }
-
+   
 }
-?>

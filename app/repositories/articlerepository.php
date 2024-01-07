@@ -34,6 +34,13 @@ class ArticleRepository{
         $statement->setFetchMode(PDO::FETCH_CLASS, "Article");
         return $statement->fetch();
     }
+
+    
+
+
+
+
+
     
     
 

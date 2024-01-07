@@ -51,6 +51,8 @@ class ShoppingCartRepository {
         return $statement->fetch();
     }
 
+  
+
     
 }
 ?>
