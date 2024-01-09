@@ -1,18 +1,12 @@
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
     height: 100vh;
     overflow-x: hidden; 
 }
 
 .container {
-    max-width: 400px; /* Aanpassen aan je behoeften */
+    max-width: 300px; /* Aanpassen aan je behoeften */
     margin-top: 20px; /* Afstand van bovenkant van de pagina */
-}
-
-h1 {
-    color: blue;
 }
 
 #guestbook-form {

@@ -35,6 +35,25 @@ class ArticleRepository{
         return $statement->fetch();
     }
 
+    public function update($article){
+        //update only stock
+        $statement = $this->connection->prepare("UPDATE articles SET stock = :stock WHERE id = :id");
+        $statement->bindParam(":id", $article->id);
+        $statement->bindParam(":stock", $article->stock);
+        $statement->execute();
+    }
+
+    public function updateStock($article){
+        $statement = $this->connection->prepare("UPDATE articles SET stock = :stock WHERE id = :id");
+        $statement->bindParam(":id", $article->id);
+        $statement->bindParam(":stock", $article->stock);
+        $statement->execute();
+    }
+
+    
+
+    
+
     
 
 

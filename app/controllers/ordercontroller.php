@@ -21,18 +21,22 @@ class OrderController{
 
     public function insert() {
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["confirmPayment"])) {
-            $shoppingCartId = $_POST["shoppingcartid"];
-                
-            $orders = new Orders();
+            $shoppingCartIds = $_POST["shoppingcartids"];
 
-            $orders->setShoppingcartid($shoppingCartId);
-            // Insert into the database
-            $this->orderService->insert($orders);
-            
-            $this->shoppingCartService->clearCart();
+            foreach ($shoppingCartIds as $shoppingCartId) {
+                // Een nieuwe bestelling maken en toevoegen
+                $order = new Orders();
+                $order->setShoppingcartid($shoppingCartId);
+                $this->orderService->insert($order);
+
+                // Het winkelwagentje markeren als 'paid'
+                $this->shoppingCartService->updateStock($shoppingCartId);
+                $this->shoppingCartService->updateStatus($shoppingCartId, 'paid');
+            }
         }
+        
     }
 
-    
-
 }
+        
+    

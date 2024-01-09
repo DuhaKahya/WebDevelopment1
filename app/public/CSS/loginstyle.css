@@ -1,17 +1,20 @@
 body {
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
     margin: 0;
     overflow-x: hidden;
+}
+
+body, html {
+    height: 100%;
 }
 
 .logincontainer {
     max-width: 400px;
     width: 100%;
     padding: 20px;
-    margin-top: auto; /* Auto margin to push it to the middle vertically */
-    margin-bottom: 100px;
+    margin: 100px auto; /* Center the container and add margin from the top */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }

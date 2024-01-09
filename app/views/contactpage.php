@@ -25,7 +25,7 @@
 
     // Check if the form has been submitted
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Call the method to handle form submission
+
         $contactPageController->insert();
         ?><div class="alert alert-success" role="alert">
             <h4 class="alert-heading">Thank you!</h4>
@@ -36,9 +36,9 @@
     }
     ?>
 
-<h1 class="text-center fw-bold" >Contactpage</h1>
+<h1 class="text-center fw-bold">Contactpage</h1>
 
-    <form method="POST" action="" id="guestbook-form">
+    <form method="POST" name="form" action="" id="guestbook-form">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required placeholder="Name">
 

@@ -16,6 +16,19 @@ class ArticleService {
     public function insert($article) {
         $this->articleRepository->insert($article);
     }
+
+    public function getArticleById($id) {
+        return $this->articleRepository->getArticleById($id);
+    }
+
+    public function update($article) {
+        $this->articleRepository->update($article);
+    }
+
+
+    
+
+    
     
    
 

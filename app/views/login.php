@@ -1,33 +1,15 @@
 <?php include 'header.php'; ?>
 
 <?php
-require_once __DIR__.'/../services/userservice.php';
+require_once __DIR__ . '/../controllers/usercontroller.php';
 
-// Initialize error message
-$errorMsg = false;
+$loginController = new UserController();
 
-// Check if the form is submitted
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Get the username and password from the form
-    $username = $_POST['username'];
-    $password = $_POST['password'];
 
-    // Create an instance of UserService
-    $userService = new UserService();
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // Attempt to authenticate the user
-    $authenticatedUser = $userService->authenticateUser($username, $password);
-    
-    if ($authenticatedUser) {
-        
-        // Set the authenticated user in the session
-        $_SESSION['authenticatedUser'] = $authenticatedUser;
-
-        exit('<script>window.location.href = "/";</script>');
-    } else {
-        $errorMsg = true;
-    }
-}
+        $loginController->authenticateUser();
+    } 
 ?>
 
 
@@ -42,7 +24,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="icon" type="image/jpg" href="images/favicon4.jpg">
 </head>
 <body>
-
 <div class="logincontainer">
 
     <h1 class="text-center fw-bold">Login</h2>
@@ -63,12 +44,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </form>
         </div>
     </div>
-
-    <?php
-    if ($errorMsg) {
-        ?> <div class="alert alert-danger mt-3" role="alert">Invalid username or password!</div><?php
-    }
-    ?>
 
 </div>
 

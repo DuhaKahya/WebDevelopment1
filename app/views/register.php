@@ -1,46 +1,17 @@
 <?php include 'header.php'; ?>
 
 <?php
-require_once __DIR__.'/../services/userservice.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Validate and sanitize input (implement this part)
-    $username = htmlspecialchars($_POST["username"]);
-    $password = htmlspecialchars($_POST["password"]);
-    $email = htmlspecialchars($_POST["email"]);
-    $name = htmlspecialchars($_POST["name"]);
-    $address = htmlspecialchars($_POST["address"]);
-    $phonenumber = htmlspecialchars($_POST["phonenumber"]);
+require_once __DIR__.'/../controllers/usercontroller.php';
 
-    // Check if the username already exists
-    $userService = new UserService();
-    $existingUser = $userService->getUserByUsername($username);
-    $errorMsg = false;
+    $registerController = new UserController();
 
-    if ($existingUser) {
-        $errorMsg = true;
-    } else {
-        // Hash the password
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-        // Create a User object
-        $user = new User();
-        $user->setUsername($username);
-        $user->setPassword($hashedPassword);
-        $user->setEmail($email);
-        $user->setName($name);
-        $user->setAdres($address);
-        $user->setPhoneNumber($phonenumber);
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-        // Insert the user into the database
-        $userService->insert($user);
-
-        // Redirect to a confirmation page or login page
-        exit('<script>window.location.href = "login";</script>');
-    }
-}
+        $registerController->insert();
+    } 
 ?>
-
 
 
 <!DOCTYPE html>
@@ -91,11 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </form>
         </div>
     </div>
-    <?php
-    if (isset($errorMsg)) {
-        ?> <div class="alert alert-danger mt-3" role="alert">Username already exists!</div><?php
-    }
-    ?>        
+
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -109,6 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         document.getElementById("address").value = "";
         document.getElementById("phoneNumber").value = "";
     }
+
 </script>
 
 

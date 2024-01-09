@@ -45,6 +45,11 @@ class Router {
                 $controller = new UserController();
                 $controller->register();
                 break;
+            case 'logout':
+                require __DIR__ . '/controllers/usercontroller.php';
+                $controller = new UserController();
+                $controller->logout();
+                break;
                 
             default:
                 http_response_code(404);

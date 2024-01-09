@@ -45,17 +45,6 @@ class ShoppingCartController {
         }
     }
 
-    public function clearCart() {
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $this->shoppingCartService->clearCart();
-        }
-    }
-
-    
-
-    
-
-    
 }
 
 ?>

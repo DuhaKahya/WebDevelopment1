@@ -20,7 +20,7 @@ class ShoppingCartRepository {
 
     public function insert($shoppingCart) {
         
-        $statement = $this->connection->prepare("INSERT INTO shoppingcart (userid, articleid, quantity, price, totalprice) VALUES (:userid, :articleid, :quantity, :price, :totalprice)");
+        $statement = $this->connection->prepare("INSERT INTO shoppingcart (userid, articleid, quantity, price, totalprice, status) VALUES (:userid, :articleid, :quantity, :price, :totalprice, 'unpaid')");
 
         $statement->bindParam(":userid", $shoppingCart->userid);
         $statement->bindParam(":articleid", $shoppingCart->articleid);
@@ -38,10 +38,6 @@ class ShoppingCartRepository {
         $statement->execute();
     }
 
-    public function clearCart() {
-        $statement = $this->connection->prepare("DELETE FROM shoppingcart");
-        $statement->execute();
-    }
 
     public function getShoppingCartById($id) {
         $statement = $this->connection->prepare("SELECT * FROM shoppingcart WHERE id = :id");
@@ -50,6 +46,19 @@ class ShoppingCartRepository {
         $statement->setFetchMode(PDO::FETCH_CLASS, "ShoppingCart");
         return $statement->fetch();
     }
+
+    public function updateStatus($id, $status){
+        $statement = $this->connection->prepare("UPDATE shoppingcart SET status = :status WHERE id = :id");
+        $statement->bindParam(":id", $id);
+        $statement->bindParam(":status", $status);
+        $statement->execute();
+
+    }
+
+    
+
+    
+
 
   
 

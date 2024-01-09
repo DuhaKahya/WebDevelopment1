@@ -9,6 +9,7 @@ class ShoppingCart implements JsonSerializable{
     public float $price;
     public float $totalprice;
     public string $date; //in de database is het DateTime alleen pakt die hem niet
+    public string $status;
     
     public function jsonSerialize() : mixed {
         return get_object_vars($this);
@@ -42,6 +43,10 @@ class ShoppingCart implements JsonSerializable{
         return $this->date;
     }
 
+    public function getStatus(): string {
+        return $this->status;
+    }
+
     public function setId(int $id): void {
         $this->id = $id;
     }
@@ -70,6 +75,9 @@ class ShoppingCart implements JsonSerializable{
         $this->date = $date;
     }
 
+    public function setStatus(string $status): void {
+        $this->status = $status;
+    }
 
  
 }
