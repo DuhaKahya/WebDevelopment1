@@ -46,6 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["confirmPayment"])) {
     </div><?php
         echo '<script>setTimeout(function(){window.location.href = "shoppingcart";}, 5000);</script>';
 }
+
+$disablePayButton = false; // Flag to disable pay button
 ?>
 
 <h1 class="text-center fw-bold">Shopping Cart</h1>
@@ -81,9 +83,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["confirmPayment"])) {
                             </form>
                         </td>
                     </tr>
-                    <?php $total += $shoppingCart->getTotalprice(); ?>
-              </div>
-            <?php
+                    <?php $total += $shoppingCart->getTotalprice(); 
+                    
+                    // Check if article stock is not enough
+                    if ($article->getStock() < $shoppingCart->getQuantity()):
+                        $disablePayButton = true; // Set flag to disable pay button
+                        ?>
+                        <div class="alert alert-danger" role="alert">
+                            <p>Not enough stock for <?= $article->getTitle(); ?>. Available stock: <?= $article->getStock(); ?></p>
+                        </div>
+                        <?php
+                    endif;
                 endif;
             endforeach;
             ?>
@@ -97,7 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["confirmPayment"])) {
             <h4>Total Price: €<?= $total; ?></h4>
         </div>
         <div class="ml-auto">
-            <button type="button" class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#paymentModal">
+        <button type="button" class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#paymentModal" <?= $disablePayButton ? 'disabled' : ''; ?>>
                 Pay
             </button>
         </div>
@@ -139,10 +149,12 @@ function hasUnpaidItems($shoppingCarts) {
     return false;
 }
 
+
 // if there are no items in shoppingcart pay button needs to be disabled
 if (!hasUnpaidItems($shoppingCarts)) {
     echo '<script>document.querySelector(".btn-success").disabled = true;</script>';
 }
+
 
 ?>
 

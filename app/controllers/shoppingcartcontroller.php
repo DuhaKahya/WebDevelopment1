@@ -17,7 +17,7 @@ class ShoppingCartController {
     
 
     public function insert() {
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["userid"]) && isset($_POST["articleid"]) && isset($_POST["quantity"]) && isset($_POST["price"])) {
 
             $userid = $_POST["userid"];
             $articleid = $_POST["articleid"];

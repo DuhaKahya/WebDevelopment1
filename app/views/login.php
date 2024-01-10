@@ -3,12 +3,12 @@
 <?php
 require_once __DIR__ . '/../controllers/usercontroller.php';
 
-$loginController = new UserController();
+$userController = new UserController();
 
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["username"]) && isset($_POST["password"])) {
 
-        $loginController->authenticateUser();
+        $userController->authenticateUser();
     } 
 ?>
 

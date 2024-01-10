@@ -18,6 +18,7 @@ class ArticleController {
         $articles = $this->articleService->getAll();
         require_once __DIR__.'/../views/ticket.php';
     }
+    
 
    
 

@@ -30,7 +30,7 @@ class UserController {
 
     public function authenticateUser(){
         // Check if the form is submitted
-        if ($_SERVER['REQUEST_METHOD'] === 'POST' ) {
+        if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['username']) && isset($_POST['password'])) {
             // Get the username and password from the form
             $username = $_POST['username'];
             $password = $_POST['password'];
@@ -54,7 +54,7 @@ class UserController {
     
 
     public function insert() {
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["email"]) && isset($_POST["name"]) && isset($_POST["address"]) && isset($_POST["phonenumber"])) {
             // Validate and sanitize input (implement this part)
             $username = $_POST["username"];
             $password = $_POST["password"];

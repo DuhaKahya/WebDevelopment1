@@ -50,7 +50,11 @@ class Router {
                 $controller = new UserController();
                 $controller->logout();
                 break;
-                
+            case 'api/article':
+                require __DIR__ . '/api/articlecontroller.php';
+                $controller = new ArticleController();
+                $controller->index();
+                break;
             default:
                 http_response_code(404);
                 break;

@@ -15,8 +15,6 @@
 
 <div class="container mt-100">
 
-  
-
     <?php
     require_once __DIR__.'/../controllers/contactpagecontroller.php';
 
