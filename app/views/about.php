@@ -7,8 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/aboutstyle.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="icon" type="image/jpg" href="images/favicon2.jpg">
-    <title>Galatasaray</title>
   </head>
 <body>
   
@@ -44,7 +42,7 @@
         <p>
 Galatasaray Sports Club, founded in 1905 in Istanbul, Turkey, stands as the most successful team in Turkish football history. With 23 championships since the introduction of professional football in 1959, they hold the record in Turkey. The club has also secured the national cup 18 times, another Turkish record. Galatasaray's pinnacle achievement was winning the UEFA Cup and UEFA Super Cup in the 1999/2000 season, marking the first and only time a Turkish club has clinched a major European title. Their European success has garnered them the largest fanbase in Turkey.
 <br><br>
-Known by various nicknames such as "Aslanlar" (The Lions), "Cim Bom Bom," "Avrupa Fatihi" (Conquerors of Europe), and "Sarı-Kırmızılılar" (Yellow-Reds), the team is often referred to as "Gala" by English speakers. Galatasaray isn't solely a football club; it houses departments for basketball, volleyball, swimming, rowing, water polo, and athletics. Additionally, it's publicly traded on the Borsa Istanbul.
+Known by various nicknames such as "Aslanlar" (The Lions), "Cim Bom Bom," "Avrupa Fatihi" (Conquerors of Europe), and "Sari-Kirmizililar" (Yellow-Reds), the team is often referred to as "Gala" by English speakers. Galatasaray isn't solely a football club; it houses departments for basketball, volleyball, swimming, rowing, water polo, and athletics. Additionally, it's publicly traded on the Borsa Istanbul.
 <br><br>    
 Galatasaray shares a fierce rivalry with local counterpart Fenerbahçe, with their matches recognized as one of the biggest derbies globally. Termed the "Intercontinental Derby," this rivalry stems from Galatasaray's European-side location in Istanbul, contrasting with Fenerbahçe situated on the city's Asian side.</p>
       </div>
