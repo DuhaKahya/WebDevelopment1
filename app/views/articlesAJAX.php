@@ -11,6 +11,7 @@
             display: inline-block;
             width: 100px;
             vertical-align: top;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -76,6 +77,8 @@ async function loadData() {
 
 async function sendForm() {
 
+    
+
     // Create an object with the data from the form (title and content)
     let data = {
         title: document.getElementById('title').value,
@@ -85,6 +88,8 @@ async function sendForm() {
         category: document.getElementById('category').value
     };
 
+    console.log(data);
+  
     // Post the data to http://localhost/api/article using fetch
     const response = await fetch('http://localhost/api/article',
         {
@@ -92,7 +97,10 @@ async function sendForm() {
             headers: {
                 'Content-type': 'application/json'
             },
+            
             body: JSON.stringify(data)
+
+
         });
 
     if (!response.ok) {
