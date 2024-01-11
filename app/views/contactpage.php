@@ -14,21 +14,18 @@
 <div class="container mt-100">
 
     <?php
-    require_once __DIR__.'/../controllers/contactpagecontroller.php';
-
-    // Create an instance of ContactPageController
-    $contactPageController = new ContactPageController();
-
     // Check if the form has been submitted
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-        $contactPageController->insert();
-        ?><div class="alert alert-success" role="alert">
+    if ($inserted) {
+        ?>
+        <div class="alert alert-success" role="alert">
             <h4 class="alert-heading">Thank you!</h4>
             <p>Your message has been sent.</p>
             <hr>
             <p class="mb-0">We will get back to you as soon as possible.</p> 
-        </div><?php
+        </div>
+        <?php
+
+        
     }
     ?>
 

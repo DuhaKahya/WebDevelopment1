@@ -1,18 +1,17 @@
 <?php include 'header.php'; ?>
 
 <?php
-require_once __DIR__.'/../controllers/shoppingcartcontroller.php';
-
-$shoppingCartController = new ShoppingCartController();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete"])) {
-    $shoppingCartController->delete();
     
-    ?><div class="alert alert-success" role="alert">
+    
+    if($deleted){
+        ?><div class="alert alert-success" role="alert">
         <p>Item deleted from shoppingcart!</p>
     </div><?php
-
-    exit('<script>window.location.href = "shoppingcart";</script>');
+    }
+    // delay of 5 seconds and redirect to shoppingcart page
+    echo '<script>setTimeout(function(){window.location.href = "shoppingcart";}, 3000);</script>';
 }
 ?>
 
@@ -29,19 +28,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete"])) {
 <div class="container min-vh-100">
 
 <?php
-require_once __DIR__.'/../controllers/ordercontroller.php';
-require_once __DIR__.'/../controllers/articlecontroller.php';
-
-$orderController = new OrderController();
-$articleController = new ArticleController();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["confirmPayment"])) {
-    $orderController->insert();
-
-    ?><div class="alert alert-success" role="alert">
+    if($inserted){
+            ?><div class="alert alert-success" role="alert">
         <p>Payment confirmed!</p>
     </div><?php
-        echo '<script>setTimeout(function(){window.location.href = "shoppingcart";}, 5000);</script>';
+    }
+        echo '<script>setTimeout(function(){window.location.href = "shoppingcart";}, 2000);</script>';
 }
 
 $disablePayButton = false; // Flag to disable pay button

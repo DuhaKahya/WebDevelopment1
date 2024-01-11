@@ -14,17 +14,11 @@
 
 <div class="container">
 <?php
-require_once __DIR__.'/../controllers/shoppingcartcontroller.php';
-
-// Create an instance of ShoppingCartController
-$shoppingCartController = new ShoppingCartController();
-
 // Check if the form has been submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Check if the user is logged in
-    if (isset($_SESSION['authenticatedUser'])) {
-        // Call the method to handle form submission
-        $shoppingCartController->insert();
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["userid"]) && isset($_POST["articleid"]) && isset($_POST["quantity"]) && isset($_POST["price"])) {
+    // Check if the user is logged in and the insert method returns true
+    if (isset($_SESSION['authenticatedUser']) && $inserted) {
+        
         ?><div id="succesalert" class="alert alert-success" role="alert">
         <p>Item added to the shopping cart!</p>
     </div><?php

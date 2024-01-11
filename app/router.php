@@ -55,6 +55,11 @@ class Router {
                 $controller = new ArticleController();
                 $controller->index();
                 break;
+            case 'ajax':
+                require __DIR__ . '/api/articlecontroller.php';
+                $controller = new ArticleController();
+                $controller->ajax();
+                break;
             default:
                 http_response_code(404);
                 break;

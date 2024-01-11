@@ -12,6 +12,7 @@ class ContactPageController {
 
     public function index() {
         $contactPage = $this->contactPageService->getAll();
+        $inserted = $this->insert();
         require_once __DIR__.'/../views/contactpage.php';
     }
 
@@ -32,6 +33,7 @@ class ContactPageController {
     
             // Insert into the database
             $this->contactPageService->insert($contactPage);
+            return true;
         }
 
     }

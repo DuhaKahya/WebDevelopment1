@@ -1,17 +1,5 @@
 <?php include 'header.php'; ?>
 
-<?php
-require_once __DIR__ . '/../controllers/usercontroller.php';
-
-$userController = new UserController();
-
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["username"]) && isset($_POST["password"])) {
-
-        $userController->authenticateUser();
-    } 
-?>
-
 
 <!DOCTYPE html>
 <html>
@@ -23,6 +11,19 @@ $userController = new UserController();
 </head>
 <body>
 <div class="logincontainer">
+
+<?php
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["username"]) && isset($_POST["password"])) {
+        if($authenticated){
+            exit('<script>location.href = "/";</script>');
+        }
+        else{
+            echo '<div class="alert alert-danger" role="alert">Invalid username or password</div>';
+        }
+    }
+?>
+
 
     <h1 class="text-center fw-bold">Login</h2>
     <div class="card">

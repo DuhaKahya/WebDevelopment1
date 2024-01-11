@@ -15,6 +15,7 @@
 <a href="/api/article">View the articles API endpoint</a><br>
 <a href="/webshop">View the articles (webshop) page</a><br>
 <a href="/tickets">View the articles (ticket) page</a><br>
+<a href="/ajax">View the articles (AJAX) page</a><br>
 
 <div class="container mt-5">
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">

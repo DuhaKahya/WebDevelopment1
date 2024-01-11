@@ -46,5 +46,10 @@ class ArticleController
         }
         
     }
+
+    public function ajax(){
+        $articles = $this->articleService->getAll();
+        require __DIR__ . '/../views/articlesAJAX.php';
+    }
 }
 ?>

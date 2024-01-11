@@ -16,14 +16,15 @@ class UserController {
 
     public function login() {
         $users = $this->userService->getAll();
+        $authenticated = $this->authenticateUser();
         require_once __DIR__.'/../views/login.php';
     }
     public function register() {
+        $registred = $this->insert();
         require_once __DIR__.'/../views/register.php';
     }
 
     public function logout() {
-        session_start();
         session_destroy();
         header('Location: /');
     }
@@ -39,16 +40,11 @@ class UserController {
             $authenticatedUser = $this->userService->authenticateUser($username, $password);
             
             if ($authenticatedUser != null) {
-                
                 // Set the authenticated user in the session
                 $_SESSION['authenticatedUser'] = $authenticatedUser;
-    
-                exit('<script>window.location.href = "/";</script>');
+                return true;
             }
-            else {
-                // Authentication failed
-                exit('<script>alert("Invalid username or password");window.location.href = "login";</script>');
-            }
+      
         }
     }
     
@@ -69,8 +65,7 @@ class UserController {
             // Check if the username already exists
             $existingUser = $this->userService->getUserByUsername($username);
             if ($existingUser != null) {
-                // Username already exists
-                exit('<script>alert("Username already exists");window.location.href = "register";</script>');
+                return false;
             }
 
             // Create a User object
@@ -85,10 +80,8 @@ class UserController {
     
             // Insert the user into the database
             $this->userService->insert($user);
-
-            //confirm alert
-            exit('<script>alert("Registration successful");window.location.href = "login";</script>');
-
+            return true;
+           
         }
     }
 

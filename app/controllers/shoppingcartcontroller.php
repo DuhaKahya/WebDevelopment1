@@ -1,47 +1,50 @@
 <?php
 
 require_once __DIR__.'/../services/shoppingcartService.php';
+require_once __DIR__.'/../services/orderService.php';
 
 class ShoppingCartController {
 
     private $shoppingCartService;
+    private $orderService;
 
     public function __construct() {
         $this->shoppingCartService = new ShoppingCartService();   
+        $this->orderService = new OrderService();
     }
 
     public function index() {
         $shoppingCarts = $this->shoppingCartService->getAll();
+        $inserted = $this->insert();
+        $deleted = $this->delete();
         require_once __DIR__.'/../views/shoppingcart.php';
     }
-    
 
     public function insert() {
-        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["userid"]) && isset($_POST["articleid"]) && isset($_POST["quantity"]) && isset($_POST["price"])) {
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["confirmPayment"])) {
+            $shoppingCartIds = $_POST["shoppingcartids"];
 
-            $userid = $_POST["userid"];
-            $articleid = $_POST["articleid"];
-            $quantity = $_POST["quantity"];
-            $price = $_POST["price"];
-            $totalprice = $quantity * $price;
+            foreach ($shoppingCartIds as $shoppingCartId) {
+                // Een nieuwe bestelling maken en toevoegen
+                $order = new Orders();
+                $order->setShoppingcartid($shoppingCartId);
+                $this->orderService->insert($order);
 
-            $shoppingCarts = new ShoppingCart();
-        
-            $shoppingCarts->setUserid($userid);
-            $shoppingCarts->setArticleid($articleid);
-            $shoppingCarts->setQuantity($quantity);
-            $shoppingCarts->setPrice($price);
-            $shoppingCarts->setTotalprice($totalprice);
-
-            // Insert into the database
-            $this->shoppingCartService->insert($shoppingCarts);
+                // Het winkelwagentje markeren als 'paid'
+                $this->shoppingCartService->updateStock($shoppingCartId);
+                $this->shoppingCartService->updateStatus($shoppingCartId, 'paid');
+            }
+            return true;
         }
+        
     }
 
+    
     public function delete() {
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete"])) {
             $id = $_POST["delete"];
             $this->shoppingCartService->delete($id);
+            return true;
         }
     }
 

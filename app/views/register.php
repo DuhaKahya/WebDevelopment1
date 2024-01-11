@@ -1,18 +1,5 @@
 <?php include 'header.php'; ?>
 
-<?php
-
-require_once __DIR__.'/../controllers/usercontroller.php';
-
-    $registerController = new UserController();
-
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-        $registerController->insert();
-    } 
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,6 +13,23 @@ require_once __DIR__.'/../controllers/usercontroller.php';
 <body>
 
 <div class="container registercontainer">
+
+<?php
+
+
+    if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["email"]) && isset($_POST["name"]) && isset($_POST["address"]) && isset($_POST["phonenumber"])) {
+        if ($registred) {
+            //wait 5 seconds and redirect to login page do not use header
+            echo '<div class="alert alert-success" role="alert">You have been registred successfully</div>';
+            echo '<script>setTimeout(function(){location.href = "login";}, 5000);</script>';
+        } 
+        else{
+            echo '<div class="alert alert-danger" role="alert">Username already exists</div>';
+        }
+    }
+
+?>
+
     <h1 class="text-center fw-bold">Register</h1>
     <div class="card">
         <div class="card-header">
