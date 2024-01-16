@@ -38,6 +38,10 @@
         if (isset($_SESSION['authenticatedUser'])) {
             $userid = $_SESSION['authenticatedUser']->getId();
         }
+        else {
+            $userid = 1;
+        }
+       
         $imageCount = 1;
         foreach ($articles as $article):
             if ($article->getCategory() !== 'Merchandise') {

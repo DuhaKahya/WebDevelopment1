@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["userid"]) && isset($_P
                             if (isset($_SESSION['authenticatedUser'])) {
                                 $userid = $_SESSION['authenticatedUser']->getId();
                             } else {
-                                $userid = 0;
+                                $userid = 1;
                             } 
                             ?>
                                 <form method="POST" action="">
