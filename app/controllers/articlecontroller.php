@@ -28,10 +28,10 @@ class ArticleController {
     public function insert() {
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["userid"]) && isset($_POST["articleid"]) && isset($_POST["quantity"]) && isset($_POST["price"])) {
 
-            $userid = $_POST["userid"];
-            $articleid = $_POST["articleid"];
-            $quantity = $_POST["quantity"];
-            $price = $_POST["price"];
+            $userid = htmlspecialchars($_POST["userid"]);
+            $articleid = htmlspecialchars($_POST["articleid"]);
+            $quantity = htmlspecialchars($_POST["quantity"]);
+            $price = htmlspecialchars($_POST["price"]);
             $totalprice = $quantity * $price;
 
             $shoppingCarts = new ShoppingCart();

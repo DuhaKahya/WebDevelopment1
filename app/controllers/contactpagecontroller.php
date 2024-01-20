@@ -19,10 +19,10 @@ class ContactPageController {
     public function insert() {
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["subject"]) && isset($_POST["message"])) {
             
-            $name = $_POST["name"];
-            $email = $_POST["email"];
-            $subject = $_POST["subject"];
-            $message = $_POST["message"];
+            $name = htmlspecialchars($_POST["name"]);
+            $email = htmlspecialchars($_POST["email"]);
+            $subject = htmlspecialchars($_POST["subject"]);
+            $message = htmlspecialchars($_POST["message"]);
     
             $contactPage = new ContactPage();
 

@@ -33,8 +33,8 @@ class UserController {
         // Check if the form is submitted
         if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['username']) && isset($_POST['password'])) {
             // Get the username and password from the form
-            $username = $_POST['username'];
-            $password = $_POST['password'];
+            $username = htmlspecialchars($_POST['username']);
+            $password = htmlspecialchars($_POST['password']);
     
             // Attempt to authenticate the user
             $authenticatedUser = $this->userService->authenticateUser($username, $password);
@@ -52,12 +52,12 @@ class UserController {
     public function insert() {
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["email"]) && isset($_POST["name"]) && isset($_POST["address"]) && isset($_POST["phonenumber"])) {
             // Validate and sanitize input (implement this part)
-            $username = $_POST["username"];
-            $password = $_POST["password"];
-            $email = $_POST["email"];
-            $name = $_POST["name"];
-            $address = $_POST["address"];
-            $phonenumber = $_POST["phonenumber"];
+            $username = htmlspecialchars($_POST["username"]);
+            $password = htmlspecialchars($_POST["password"]);
+            $email = htmlspecialchars($_POST["email"]);
+            $name = htmlspecialchars($_POST["name"]);
+            $address = htmlspecialchars($_POST["address"]);
+            $phonenumber = htmlspecialchars($_POST["phonenumber"]);
     
             // Hash the password
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);

@@ -56,11 +56,16 @@ $disablePayButton = false; // Flag to disable pay button
         <tbody>
             <?php
             $total = 0; // Initialize $total variable
+
+            // Assuming $_SESSION['authenticatedUser'] is set
+            $authenticatedUser = isset($_SESSION['authenticatedUser']) ? $_SESSION['authenticatedUser'] : null;
+
+
             foreach ($shoppingCarts as $shoppingCart):
                 $article = $this->shoppingCartService->getArticleById($shoppingCart->getArticleid());
                 
                 // Check if the status is unpaid
-                if ($shoppingCart->getStatus() === 'unpaid'):
+                if ($shoppingCart->getStatus() === 'unpaid' && $authenticatedUser && $shoppingCart->getUserid() === $authenticatedUser->getId()):
             ?>
                     <tr>
                         <td><?= $article->getTitle(); ?></td>
@@ -142,7 +147,7 @@ function hasUnpaidItems($shoppingCarts) {
 
 
 // if there are no items in shoppingcart pay button needs to be disabled
-if (!hasUnpaidItems($shoppingCarts)) {
+if (!hasUnpaidItems($shoppingCarts) || !$authenticatedUser) {
     echo '<script>document.querySelector(".btn-success").disabled = true;</script>';
 }
 
